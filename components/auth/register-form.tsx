@@ -44,6 +44,7 @@ export const RegisterForm: FC<RegisterFormProps> = ({}) => {
     startTransition(() => {
       register(values).then((data) => {
         setError(data.error);
+        setSuccess(data.success);
       });
     });
   };
