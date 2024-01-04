@@ -53,8 +53,8 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
     setSuccess("");
     startTransition(async () => {
       const res = await login(values);
-      setError(res.error);
-      setSuccess(res.succuess);
+      setError(res?.error);
+      // setSuccess(res?.succuess);
     });
   };
 
