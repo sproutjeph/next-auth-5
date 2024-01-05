@@ -51,10 +51,18 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     setError("");
     setSuccess("");
-    startTransition(async () => {
-      const res = await login(values);
-      setError(res?.error);
-      // setSuccess(res?.succuess);
+
+    startTransition(() => {
+      login(values).then((data) => {
+        if (data?.error) {
+          form.reset();
+          setError(data?.error);
+        }
+        if (data?.success) {
+          form.reset();
+          setSuccess(data?.success);
+        }
+      });
     });
   };
 

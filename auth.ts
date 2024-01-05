@@ -1,6 +1,6 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { UserRole } from "@prisma/client";
-import { getUserById } from "./data/user";
+import { getUserByEmail, getUserById } from "./data/user";
 import authConfig from "./auth.config";
 import NextAuth from "next-auth";
 import { db } from "./lib/db";
@@ -24,6 +24,18 @@ export const {
     },
   },
   callbacks: {
+    async signIn({ user, account }) {
+      // Allow OAuth without email verification
+      if (account?.provider !== "credentials") {
+        return true;
+      }
+      const existingUser = await getUserById(user.id);
+      if (!existingUser?.emailVerified) {
+        return false;
+      }
+
+      return true;
+    },
     async session({ token, session }) {
       if (token.sub && session.user) {
         session.user.id = token.sub;
