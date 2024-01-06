@@ -55,11 +55,11 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
     startTransition(() => {
       login(values).then((data) => {
         if (data?.error) {
-          // form.reset();
+          form.reset();
           setError(data?.error);
         }
         if (data?.success) {
-          // form.reset();
+          form.reset();
           setSuccess(data?.success);
         }
       });
