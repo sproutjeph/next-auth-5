@@ -62,6 +62,9 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
           form.reset();
           setSuccess(data?.success);
         }
+        if (data?.twoFactor) {
+          setShowTwoFactor(true);
+        }
       });
     });
   };

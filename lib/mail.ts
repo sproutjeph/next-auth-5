@@ -6,7 +6,7 @@ const domain = process.env.NEXT_PUBLIC_APP_URL;
 
 export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
   await resend.emails.send({
-    from: "mail@auth-masterclass-tutorial.com",
+    from: "onboarding@resend.dev",
     to: email,
     subject: "2FA Code",
     html: `<p>Your 2FA code: ${token}</p>`,
