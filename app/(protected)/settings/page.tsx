@@ -1,7 +1,6 @@
 "use client";
 
 import { logout } from "@/actions/logout";
-import { signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { FC } from "react";
