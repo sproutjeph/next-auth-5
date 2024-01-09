@@ -53,7 +53,7 @@ export const LoginForm: FC<LoginFormProps> = ({}) => {
     setSuccess("");
 
     startTransition(() => {
-      login(values).then((data) => {
+      login(values, callbackUrl).then((data) => {
         if (data?.error) {
           form.reset();
           setError(data?.error);
