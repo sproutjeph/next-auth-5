@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
-import { CardWrapper } from "./CardWrapper";
+import { CardWrapper } from "./card-wrapper";
 import { register } from "@/actions/register";
 interface RegisterFormProps {}
 

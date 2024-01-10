@@ -2,9 +2,9 @@
 
 import React, { FC } from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import { Header } from "./Header";
-import { BackButton } from "./BackBotton";
+import { BackButton } from "./back-botton";
 import { Social } from "./Social";
+import { Header } from "./header";
 
 interface CardWrapperProps {
   children: React.ReactNode;

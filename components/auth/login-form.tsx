@@ -18,16 +18,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-import { FC } from "react";
-import { CardWrapper } from "./CardWrapper";
+import { CardWrapper } from "./card-wrapper";
 import { Button } from "../ui/button";
 import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
 import { login } from "@/actions/login";
 
-interface LoginFormProps {}
-
-export const LoginForm: FC<LoginFormProps> = ({}) => {
+export const LoginForm = () => {
   const [isPending, startTransition] = useTransition();
   const [showTwoFactor, setShowTwoFactor] = useState(false);
   const [error, setError] = useState<string | undefined>("");
